@@ -6,19 +6,21 @@ import PlaygroundSupport
 
 
 protocol PopupAction: AnyObject {
-    func onTapped()
+    func onFirstTapped()
+    func onSecondTapped()
 }
 
 struct ContentView: View {
-    @State var isPresented = false
+    @State var isFirstPresented = false
+    @State var isSecondPresented = false
     private var delegate: PopupAction {
-        PopupActionDelegate(isPresented: $isPresented)
+        PopupActionDelegate(isFirstPresented: $isFirstPresented,isSecondPresented: $isSecondPresented)
     }
     
     var body: some View {
         ZStack {
             Button(action: {
-                self.isPresented = true
+                self.isFirstPresented = true
             }, label: {
                 Text("Show Popup")
                     .padding()
@@ -26,22 +28,36 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
             })
-            if isPresented {
-                PopupView(isPresented: isPresented, delegate: delegate)
+            if isFirstPresented {
+                
+                PopupView(isPresented: isFirstPresented, delegate: delegate)
+                
+            }
+            if isSecondPresented {
+                
+                PopupImageView(isPresented: isSecondPresented, delegate: delegate)
+                
             }
         }.frame(width: 375, height: 700)
     }
     
     private final class PopupActionDelegate: PopupAction {
-        @Binding var isPresented: Bool
-        
-        init(isPresented: Binding<Bool>) {
-            self._isPresented = isPresented
+        @Binding var isFirstPresented: Bool
+        @Binding var isSecondPresented: Bool
+        init(isFirstPresented: Binding<Bool>,isSecondPresented: Binding<Bool>) {
+            self._isFirstPresented = isFirstPresented
+            self._isSecondPresented = isSecondPresented
+        }
+        func onFirstTapped() {
+            self.isFirstPresented = false
+            self.isSecondPresented = true
         }
         
-        func onTapped() {
-            isPresented = false
+        func onSecondTapped() {
+            self.isSecondPresented = false
         }
+        
+
     }
 }
 
@@ -63,6 +79,33 @@ struct PopupView: View {
                 PopupBackgroundView(isPresented: isPresented)
                     .transition(.opacity)
                 PopupContentsView(delegate: delegate)
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
+                    .background(Color.gray)
+                    .cornerRadius(20)
+            }
+
+        }
+    }
+}
+
+struct PopupImageView: View {
+    @State var isPresented: Bool
+    private var delegate: PopupAction
+    init(
+        isPresented: Bool,
+        delegate: PopupAction
+    ) {
+        self.isPresented = isPresented
+        self.delegate = delegate
+    }
+    
+    var body: some View {
+        GeometryReader { geometry in
+
+            ZStack {
+                PopupBackgroundView(isPresented: isPresented)
+                    .transition(.opacity)
+                PopupImageContentsView(delegate: delegate)
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
                     .background(Color.gray)
                     .cornerRadius(20)
@@ -97,7 +140,7 @@ struct PopupContentsView: View {
                 .font(.largeTitle)
                 .foregroundColor(.white)
             Button(action: {
-                delegate.onTapped()
+                delegate.onFirstTapped()
             }, label: {
                 Text("Close")
                     .font(.headline)
@@ -112,6 +155,32 @@ struct PopupContentsView: View {
     }
 }
 
+struct PopupImageContentsView: View {
+    private var delegate: PopupAction
+    init(
+        delegate: PopupAction
+    ) {
+        self.delegate = delegate
+    }
+    var body: some View {
+        VStack {
+            Image(systemName: "star.fill")
+                .font(.system(size: 50))
+            Button(action: {
+                delegate.onSecondTapped()
+            }, label: {
+                Text("Close")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+            })
+        }
+    
+    }
+}
 
 
 
