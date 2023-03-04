@@ -4,6 +4,8 @@ import SwiftUI
 import Combine
 import PlaygroundSupport
 
+
+
 struct ContentView: View {
     @State var isPresented = false
     
@@ -19,12 +21,28 @@ struct ContentView: View {
                     .cornerRadius(12)
             })
             if isPresented {
+                PopupView(isPresented: $isPresented)
+            }
+        }.frame(width: 375, height: 700)
+    }
+}
+
+struct PopupView: View {
+    @Binding var isPresented: Bool
+    
+    var body: some View {
+        GeometryReader { geometry in
+
+            ZStack {
                 PopupBackgroundView(isPresented: $isPresented)
                     .transition(.opacity)
-                PopupView()
-                    .transition(.scale)
+                PopupContentsView()
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
+                    .background(Color.gray)
+                    .cornerRadius(20)
             }
-        }.frame(width: 750, height: 500)
+
+        }
     }
 }
 
@@ -32,7 +50,7 @@ struct PopupBackgroundView: View {
     @Binding var isPresented: Bool
     
     var body: some View {
-        Color.black.opacity(0.4)
+        Color.black.opacity(0.3)
             .onTapGesture {
                 self.isPresented = false
             }
@@ -40,14 +58,14 @@ struct PopupBackgroundView: View {
     }
 }
 
-struct PopupView: View {
+struct PopupContentsView: View {
     var body: some View {
         VStack {
             Text("Hello, World!")
                 .font(.largeTitle)
                 .foregroundColor(.white)
             Button(action: {
-                // ボタンをクリックしたときのアクション
+                
             }, label: {
                 Text("Close")
                     .font(.headline)
@@ -58,11 +76,10 @@ struct PopupView: View {
                     .cornerRadius(12)
             })
         }
-        .padding()
-        .frame(width: 300, height: 200)
-        .background(Color.gray)
-        .cornerRadius(20)
+    
     }
 }
+
+
 
 PlaygroundPage.current.liveView = UIHostingController(rootView: ContentView())
