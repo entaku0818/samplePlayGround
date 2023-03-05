@@ -4,10 +4,7 @@ import SwiftUI
 import PlaygroundSupport
 
 
-protocol PopupAction: AnyObject {
-    func onFirstTapped()
-    func onSecondTapped()
-}
+
 
 struct ContentView: View {
     @State var isFirstPresented = false
@@ -15,15 +12,26 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Button(action: {
-                self.isFirstPresented = true
-            }, label: {
-                Text("Show Popup")
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-            })
+            VStack {
+                Button(action: {
+                    self.isFirstPresented = true
+                }, label: {
+                    Text("Show Popup")
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                })
+                Button(action: {
+                    self.isSecondPresented = true
+                }, label: {
+                    Text("Show Popup2")
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                })
+            }
             if isFirstPresented {
                 PopupView(isPresented: $isFirstPresented)
             }
