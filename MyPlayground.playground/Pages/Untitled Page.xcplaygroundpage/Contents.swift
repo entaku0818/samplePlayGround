@@ -25,12 +25,12 @@ struct ContentView: View {
                         Text("Profile")
                     }
                     .tag(2)
+                    
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            
             .accentColor(.blue)
-
+            
             
             TabBar(selectedTab: $selectedTab)
                 .alignmentGuide(.bottom, computeValue: { dimension in
@@ -65,18 +65,35 @@ struct TabBarItem: View {
             selectedTab = tag
         }) {
             VStack {
-                Image(systemName: imageName)
-                    .font(.system(size: 24))
-                Text(text)
-                    .font(.footnote)
-            }
-            .foregroundColor(tag == selectedTab ? .blue : .gray)
-            .padding(.vertical, 10)
-            .frame(maxWidth: .infinity)
+                  ZStack {
+                      Image(systemName: imageName)
+                          .font(.system(size: 24))
+                      Badge(number: 1)
+                          .offset(x: 10, y: -10)
+                  }
+                  Text(text)
+                      .font(.footnote)
+              }
+              .foregroundColor(tag == selectedTab ? .blue : .gray)
+              .padding(.vertical, 10)
+              .frame(maxWidth: .infinity)
         }
     }
 }
 
+struct Badge: View {
+    let number: Int
+    
+    var body: some View {
+        Text("\(number)")
+            .font(.system(size: 12))
+            .foregroundColor(.white)
+            .padding(.horizontal, 4)
+            .padding(.vertical, 2)
+            .background(Color.red)
+            .clipShape(Circle())
+    }
+}
 
 struct UIViewControllerWrapper: UIViewControllerRepresentable {
     let uiViewController: UIViewController
