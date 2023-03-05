@@ -1,7 +1,6 @@
 
 import UIKit
 import SwiftUI
-import Combine
 import PlaygroundSupport
 
 
@@ -13,9 +12,6 @@ protocol PopupAction: AnyObject {
 struct ContentView: View {
     @State var isFirstPresented = false
     @State var isSecondPresented = false
-    private var delegate: PopupAction {
-        PopupActionDelegate(isFirstPresented: $isFirstPresented,isSecondPresented: $isSecondPresented)
-    }
     
     var body: some View {
         ZStack {
@@ -29,48 +25,20 @@ struct ContentView: View {
                     .cornerRadius(12)
             })
             if isFirstPresented {
-                
-                PopupView(isPresented: isFirstPresented, delegate: delegate)
-                
+                PopupView(isPresented: $isFirstPresented)
             }
             if isSecondPresented {
                 
-                PopupImageView(isPresented: isSecondPresented, delegate: delegate)
+                PopupImageView(isPresented: $isSecondPresented)
                 
             }
         }.frame(width: 375, height: 700)
     }
     
-    private final class PopupActionDelegate: PopupAction {
-        @Binding var isFirstPresented: Bool
-        @Binding var isSecondPresented: Bool
-        init(isFirstPresented: Binding<Bool>,isSecondPresented: Binding<Bool>) {
-            self._isFirstPresented = isFirstPresented
-            self._isSecondPresented = isSecondPresented
-        }
-        func onFirstTapped() {
-            self.isFirstPresented = false
-            self.isSecondPresented = true
-        }
-        
-        func onSecondTapped() {
-            self.isSecondPresented = false
-        }
-        
-
-    }
 }
 
 struct PopupView: View {
-    @State var isPresented: Bool
-    private var delegate: PopupAction
-    init(
-        isPresented: Bool,
-        delegate: PopupAction
-    ) {
-        self.isPresented = isPresented
-        self.delegate = delegate
-    }
+    @Binding var isPresented: Bool
     
     var body: some View {
         GeometryReader { geometry in
@@ -78,7 +46,7 @@ struct PopupView: View {
             ZStack {
                 PopupBackgroundView(isPresented: isPresented)
                     .transition(.opacity)
-                PopupContentsView(delegate: delegate)
+                PopupContentsView(isPresented:$isPresented)
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
                     .background(Color.gray)
                     .cornerRadius(20)
@@ -89,23 +57,14 @@ struct PopupView: View {
 }
 
 struct PopupImageView: View {
-    @State var isPresented: Bool
-    private var delegate: PopupAction
-    init(
-        isPresented: Bool,
-        delegate: PopupAction
-    ) {
-        self.isPresented = isPresented
-        self.delegate = delegate
-    }
-    
+    @Binding var isPresented: Bool
     var body: some View {
         GeometryReader { geometry in
 
             ZStack {
                 PopupBackgroundView(isPresented: isPresented)
                     .transition(.opacity)
-                PopupImageContentsView(delegate: delegate)
+                PopupImageContentsView(isPresented: $isPresented)
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3)
                     .background(Color.gray)
                     .cornerRadius(20)
@@ -128,19 +87,14 @@ struct PopupBackgroundView: View {
 }
 
 struct PopupContentsView: View {
-    private var delegate: PopupAction
-    init(
-        delegate: PopupAction
-    ) {
-        self.delegate = delegate
-    }
+    @Binding var isPresented: Bool
     var body: some View {
         VStack {
             Text("Hello, World!")
                 .font(.largeTitle)
                 .foregroundColor(.white)
             Button(action: {
-                delegate.onFirstTapped()
+                isPresented = false
             }, label: {
                 Text("Close")
                     .font(.headline)
@@ -156,18 +110,13 @@ struct PopupContentsView: View {
 }
 
 struct PopupImageContentsView: View {
-    private var delegate: PopupAction
-    init(
-        delegate: PopupAction
-    ) {
-        self.delegate = delegate
-    }
+    @Binding var isPresented: Bool
     var body: some View {
         VStack {
             Image(systemName: "star.fill")
                 .font(.system(size: 50))
             Button(action: {
-                delegate.onSecondTapped()
+                isPresented = false
             }, label: {
                 Text("Close")
                     .font(.headline)
