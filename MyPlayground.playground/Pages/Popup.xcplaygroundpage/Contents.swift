@@ -7,14 +7,23 @@ import PlaygroundSupport
 
 
 struct ContentView: View {
-    @State var isFirstPresented = false
-    @State var isSecondPresented = false
+
+    class State: ObservableObject {
+        @Published var isFirstPresented = false
+        @Published var isSecondPresented = false
+        init(isFirstPresented: Bool,isSecondPresented:Bool) {
+            self.isFirstPresented = isFirstPresented
+            self.isSecondPresented = isSecondPresented
+        }
+    }
+
+    @ObservedObject var state: State
     
     var body: some View {
         ZStack {
             VStack {
                 Button(action: {
-                    self.isFirstPresented = true
+                    self.state.isFirstPresented = true
                 }, label: {
                     Text("Show Popup")
                         .padding()
@@ -23,7 +32,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                 })
                 Button(action: {
-                    self.isSecondPresented = true
+                    self.state.isSecondPresented = true
                 }, label: {
                     Text("Show Popup2")
                         .padding()
@@ -32,12 +41,12 @@ struct ContentView: View {
                         .cornerRadius(12)
                 })
             }
-            if isFirstPresented {
-                PopupView(isPresented: $isFirstPresented)
+            if state.isFirstPresented {
+                PopupView(isPresented: $state.isFirstPresented)
             }
-            if isSecondPresented {
+            if state.isSecondPresented {
                 
-                PopupImageView(isPresented: $isSecondPresented)
+                PopupImageView(isPresented: $state.isSecondPresented)
                 
             }
         }.frame(width: 375, height: 700)
@@ -142,4 +151,4 @@ struct PopupImageContentsView: View {
 
 
 
-PlaygroundPage.current.liveView = UIHostingController(rootView: ContentView())
+PlaygroundPage.current.liveView = UIHostingController(rootView: ContentView(state: .init(isFirstPresented: false, isSecondPresented: false)))
