@@ -3,5 +3,7 @@
     <pages>
         <page name='Popup'/>
         <page name='UIHostingController'/>
+        <page name='Incremental Search'/>
+        <page name='TabBar'/>
     </pages>
 </playground>
