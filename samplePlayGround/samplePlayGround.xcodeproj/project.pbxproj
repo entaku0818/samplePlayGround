@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020AE32029C06AFC00095154 /* AnimationViewController.swift */; };
+		020AE32329C06E3300095154 /* congratulations.json in Resources */ = {isa = PBXBuildFile; fileRef = 020AE32229C06E3300095154 /* congratulations.json */; };
 		6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */; };
 		6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22529BBF2DC006A5725 /* ContentView.swift */; };
 		6180B22829BBF2DD006A5725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6180B22729BBF2DD006A5725 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020AE32029C06AFC00095154 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		020AE32229C06E3300095154 /* congratulations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = congratulations.json; sourceTree = "<group>"; };
 		6180B22029BBF2DC006A5725 /* samplePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samplePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundApp.swift; sourceTree = "<group>"; };
 		6180B22529BBF2DC006A5725 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,9 +102,11 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
+				020AE32229C06E3300095154 /* congratulations.json */,
 				61E2D55E29BBF90900A9C712 /* ok.json */,
 				6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */,
 				6180B22529BBF2DC006A5725 /* ContentView.swift */,
+				020AE32029C06AFC00095154 /* AnimationViewController.swift */,
 				6180B22729BBF2DD006A5725 /* Assets.xcassets */,
 				6180B22929BBF2DD006A5725 /* samplePlayGround.entitlements */,
 				6180B22A29BBF2DD006A5725 /* Preview Content */,
@@ -245,6 +251,7 @@
 			files = (
 				6180B22C29BBF2DD006A5725 /* Preview Assets.xcassets in Resources */,
 				6180B22829BBF2DD006A5725 /* Assets.xcassets in Resources */,
+				020AE32329C06E3300095154 /* congratulations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */,
+				020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */,
 				6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -409,6 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -425,7 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"samplePlayGround/Preview Content\"";
-				DEVELOPMENT_TEAM = 4YZQY4C47E;
+				DEVELOPMENT_TEAM = H5HP745B7Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -447,7 +457,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.entaku.samplePlayGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"samplePlayGround/Preview Content\"";
-				DEVELOPMENT_TEAM = 4YZQY4C47E;
+				DEVELOPMENT_TEAM = H5HP745B7Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -485,7 +497,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.entaku.samplePlayGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
