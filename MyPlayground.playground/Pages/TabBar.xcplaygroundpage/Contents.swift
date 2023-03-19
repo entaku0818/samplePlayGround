@@ -7,7 +7,7 @@ import PlaygroundSupport
 
 
 
-struct ContentView: View {
+struct CustomTabBarView: View {
     @State private var selectedTab = 0
     
     var body: some View {
@@ -39,6 +39,38 @@ struct ContentView: View {
         }.frame(width:375,height: 600)
     }
 }
+
+
+
+struct TabBarView: View {
+            
+    var body: some View {
+        
+        TabView {
+            Text("First Tab")
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text("First")
+                }
+            
+            Text("Second Tab")
+                .tabItem {
+                    Image(systemName: "2.circle")
+                    Text("Second")
+                }
+            .badge(5)
+
+            
+            Text("Third Tab")
+                .tabItem {
+                    Image(systemName: "3.circle")
+                    Text("Third")
+                }
+            .badge("New")
+        }
+    }
+}
+
 
 struct TabBar: View {
     @Binding var selectedTab: Int
@@ -131,4 +163,5 @@ class ThirdViewController: UIViewController {
     }
 }
 
-PlaygroundPage.current.liveView = UIHostingController(rootView: ContentView())
+PlaygroundPage.current.liveView = UIHostingController(rootView:
+                                                        TabBarView())
