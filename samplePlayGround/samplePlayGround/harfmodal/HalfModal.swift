@@ -25,9 +25,9 @@ struct HalfModalView: View {
                         .font(.headline)
                 }
                 Button(action: {
-                    isModalPresented1.toggle()
+                    isBeforeiOS15ModalPresented.toggle()
                 }) {
-                    Text("Show Half Modal2")
+                    Text("BeforeiOS15ModalPresented")
                         .font(.headline)
                 }.padding()
             }
