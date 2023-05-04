@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020AE32029C06AFC00095154 /* AnimationViewController.swift */; };
 		020AE32329C06E3300095154 /* congratulations.json in Resources */ = {isa = PBXBuildFile; fileRef = 020AE32229C06E3300095154 /* congratulations.json */; };
+		610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610E9E2E2A039E00008A2568 /* HalfModal.swift */; };
 		6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */; };
 		6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22529BBF2DC006A5725 /* ContentView.swift */; };
 		6180B22829BBF2DD006A5725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6180B22729BBF2DD006A5725 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		020AE32029C06AFC00095154 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		020AE32229C06E3300095154 /* congratulations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = congratulations.json; sourceTree = "<group>"; };
+		610E9E2E2A039E00008A2568 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		6180B22029BBF2DC006A5725 /* samplePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samplePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundApp.swift; sourceTree = "<group>"; };
 		6180B22529BBF2DC006A5725 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610E9E2D2A039DED008A2568 /* harfmodal */ = {
+			isa = PBXGroup;
+			children = (
+				610E9E2E2A039E00008A2568 /* HalfModal.swift */,
+			);
+			path = harfmodal;
+			sourceTree = "<group>";
+		};
 		6180B21729BBF2DC006A5725 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
+				610E9E2D2A039DED008A2568 /* harfmodal */,
 				020AE32229C06E3300095154 /* congratulations.json */,
 				61E2D55E29BBF90900A9C712 /* ok.json */,
 				6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */,
@@ -278,6 +289,7 @@
 			files = (
 				6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */,
 				020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */,
+				610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */,
 				6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
