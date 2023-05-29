@@ -6,5 +6,6 @@
         <page name='Incremental Search'/>
         <page name='TabBar'/>
         <page name='MapKit'/>
+        <page name='TextEditor'/>
     </pages>
 </playground>
