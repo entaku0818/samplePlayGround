@@ -7,99 +7,122 @@
 
 import SwiftUI
 
-struct TextView: View {
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+struct TextFieldView: View {
 
     @State private var text1: String = ""
     @State private var myMoney:Decimal.FormatStyle.Currency.FormatInput = 0
     @State private var myDouble:Double = 0.0
-     @State private var numberFormatter: NumberFormatter = {
+    @State private var numberFormatter: NumberFormatter = {
          var nf = NumberFormatter()
          nf.numberStyle = .decimal
          return nf
      }()
     @State private var text2: String = ""
-    @State private var givenName = ""
+    @State private var text3: String = ""
+    @State private var text3Message: String = ""
+
     @State private var familyName = ""
-    @State private var username = ""
-    @State private var password = ""
-    @State private var nameComponents = PersonNameComponents()
+    @FocusState private var familyNameFocused: Bool
 
 
+     enum Field: Hashable {
+         case username
+         case password
+     }
 
-    func validate(components: PersonNameComponents) {
-        if ((components.givenName?.isEmpty) != nil){
-            return
-        }
-    }
+     @State private var username = ""
+     @State private var password = ""
+     @FocusState private var focusedField: Field?
 
     var body: some View {
-        VStack {
-            TextField("test", text: $text1)
-            TextField("test", text: $text1)
-                .textFieldStyle(.roundedBorder)
-             TextField(
-                 "Currency (USD)",
-                 value: $myMoney,
-                 format: .currency(code: "USD")
-             ).textFieldStyle(.roundedBorder)
-             .onChange(of: myMoney) { newValue in
-                 print ("myMoney: \(newValue)")
-             }
-             TextField(
-                 value: $myDouble,
-                 formatter: numberFormatter
-             ) {
-                 Text("Double")
-             }
-             Text(myDouble, format: .number)
-             Text(myDouble, format: .number.precision(.significantDigits(5)))
-             Text(myDouble, format: .number.notation(.scientific))
-            TextField("Enter text", text: $text2, prompt: Text("Type something"), axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-             HStack {
-                 TextField(
-                     "Given Name",
-                     text: $givenName
-                 )
-                 .disableAutocorrection(true)
-                 TextField(
-                     "Family Name",
-                     text: $familyName
-                 )
-                 .disableAutocorrection(true)
-             }
-             .textFieldStyle(.roundedBorder)
+        ScrollView{
+            VStack {
+                VStack{
+                    TextField("test", text: $text1)
+                        .textFieldStyle(.roundedBorder)
+                    TextField("test", text: $text2, prompt: Text("Type something").foregroundColor(.red))
+                        .textFieldStyle(.roundedBorder)
 
-            VStack{
-                Form {
-                    TextField(text: $username, prompt: Text("Required")) {
-                        Text("Username")
-                    }
-                    SecureField(text: $password, prompt: Text("Required")) {
-                        Text("Password")
-                    }
                 }
+                VStack{
+
+                    TextField("Enter text", text: $text2, prompt: Text("Type long something"), axis: .vertical)
+                        .textFieldStyle(.roundedBorder)
+                }
+
+                TextField("Enter text", text: $text3)
+                    .textFieldStyle(.roundedBorder)
+                    .onChange(of: text3) { newValue in
+                        text3Message = "入力文字数は\(text3.count)文字"
+                    }
+                Text(text3Message)
                 TextField(
-                    "Proper name",
-                    value: $nameComponents,
-                    format: .name(style: .medium)
-                )
-                .onSubmit {
-                    validate(components: nameComponents)
+                    "Currency (USD)",
+                    value: $myMoney,
+                    format: .currency(code: "USD")
+                ).textFieldStyle(.roundedBorder)
+
+                VStack{
+                    TextField(
+                        value: $myDouble,
+                        formatter: numberFormatter
+                    ) {
+                        Text("Double")
+                    }.textFieldStyle(.roundedBorder)
+                    Text(myDouble, format: .number.precision(.significantDigits(5)))
+                    Text(myDouble, format: .number.notation(.scientific))
+
+                    TextField("Username", text: $familyName)
+                        .textFieldStyle(.roundedBorder)
+                        .focused($familyNameFocused)
+                        .toolbar{
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Spacer()
+                                Button("閉じる") {
+                                    familyNameFocused = false
+                                    UIApplication.shared.endEditing()
+                                }
+                            }
+                        }
+
+
                 }
-                .disableAutocorrection(true)
-                .border(.secondary)
-                Text(nameComponents.debugDescription)
-            }
+                VStack {
+                    TextField("Username", text: $username)
+                        .focused($focusedField, equals: .username)
+                        .textFieldStyle(.roundedBorder)
 
 
-        }.padding(.horizontal)
+                    SecureField("Password", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                        .focused($focusedField, equals: .password)
+
+                    Button("Sign In") {
+                        if username.isEmpty {
+                            focusedField = .username
+                        } else if password.isEmpty {
+                            focusedField = .password
+                        }
+                    }
+                }
+
+
+                Spacer()
+
+
+            }.padding(.horizontal)
+        }
     }
-
 }
 
-struct TextView_Previews: PreviewProvider {
+struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        TextView()
+        TextFieldView()
     }
 }
