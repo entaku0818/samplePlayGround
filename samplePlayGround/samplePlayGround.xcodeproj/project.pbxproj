@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020AE32029C06AFC00095154 /* AnimationViewController.swift */; };
 		020AE32329C06E3300095154 /* congratulations.json in Resources */ = {isa = PBXBuildFile; fileRef = 020AE32229C06E3300095154 /* congratulations.json */; };
+		610503E02A3FD87C005214B6 /* AudioRecorderPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610503DF2A3FD87C005214B6 /* AudioRecorderPlayer.swift */; };
+		610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610503E12A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift */; };
 		610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610E9E2E2A039E00008A2568 /* HalfModal.swift */; };
 		6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */; };
 		6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22529BBF2DC006A5725 /* ContentView.swift */; };
@@ -18,7 +20,7 @@
 		6180B24029BBF2DD006A5725 /* samplePlayGroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B23F29BBF2DD006A5725 /* samplePlayGroundUITests.swift */; };
 		6180B24229BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B24129BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift */; };
 		6180B25029BBF3A0006A5725 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6180B24F29BBF3A0006A5725 /* Lottie */; };
-		61EBD39A2A2422C4000D7AB0 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EBD3992A2422C4000D7AB0 /* TextView.swift */; };
+		61EBD39A2A2422C4000D7AB0 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		020AE32029C06AFC00095154 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		020AE32229C06E3300095154 /* congratulations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = congratulations.json; sourceTree = "<group>"; };
+		610503DF2A3FD87C005214B6 /* AudioRecorderPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderPlayer.swift; sourceTree = "<group>"; };
+		610503E12A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderPlayerApp.swift; sourceTree = "<group>"; };
 		610E9E2E2A039E00008A2568 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		6180B22029BBF2DC006A5725 /* samplePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samplePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundApp.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		6180B23F29BBF2DD006A5725 /* samplePlayGroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundUITests.swift; sourceTree = "<group>"; };
 		6180B24129BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		61E2D55E29BBF90900A9C712 /* ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ok.json; sourceTree = "<group>"; };
-		61EBD3992A2422C4000D7AB0 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610503DE2A3FD871005214B6 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				610503DF2A3FD87C005214B6 /* AudioRecorderPlayer.swift */,
+				610503E12A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		610E9E2D2A039DED008A2568 /* harfmodal */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +127,8 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
-				61EBD3992A2422C4000D7AB0 /* TextView.swift */,
+				610503DE2A3FD871005214B6 /* audio */,
+				61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */,
 				610E9E2D2A039DED008A2568 /* harfmodal */,
 				020AE32229C06E3300095154 /* congratulations.json */,
 				61E2D55E29BBF90900A9C712 /* ok.json */,
@@ -290,11 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */,
 				6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */,
 				020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */,
 				610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */,
 				6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */,
-				61EBD39A2A2422C4000D7AB0 /* TextView.swift in Sources */,
+				610503E02A3FD87C005214B6 /* AudioRecorderPlayer.swift in Sources */,
+				61EBD39A2A2422C4000D7AB0 /* TextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"samplePlayGround/Preview Content\"";
-				DEVELOPMENT_TEAM = H5HP745B7Y;
+				DEVELOPMENT_TEAM = 4YZQY4C47E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -465,7 +481,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -491,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"samplePlayGround/Preview Content\"";
-				DEVELOPMENT_TEAM = H5HP745B7Y;
+				DEVELOPMENT_TEAM = 4YZQY4C47E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -505,7 +521,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
