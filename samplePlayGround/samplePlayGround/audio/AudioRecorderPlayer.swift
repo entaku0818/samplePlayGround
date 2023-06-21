@@ -39,6 +39,29 @@ class AudioRecorderPlayer: ObservableObject {
             AVSampleRateKey: 44100,
         ]
 
+        // 11:08 - Other audio ducking
+        do {
+            try inputNode.setVoiceProcessingEnabled(true)
+        } catch {
+            print("Could not enable voice processing \(error)")
+        }
+        let duckingConfig = AVAudioVoiceProcessingOtherAudioDuckingConfiguration(enableAdvancedDucking: false, duckingLevel: .max)
+        inputNode.voiceProcessingOtherAudioDuckingConfiguration = duckingConfig
+
+
+       // 12:31 - Voice activity detection - implementation with HAL APIs
+        let listener =  { (event : AVAudioVoiceProcessingSpeechActivityEvent) in
+            if (event == AVAudioVoiceProcessingSpeechActivityEvent.started) {
+                // User has started talking while muted. Prompt the user to un-mute
+            } else if (event == AVAudioVoiceProcessingSpeechActivityEvent.ended) {
+                // User has stopped talking while muted
+            }
+        }
+        inputNode.setMutedSpeechActivityEventListener(listener)
+        // When user mutes
+        inputNode.isVoiceProcessingInputMuted = true
+
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         let fileName = dateFormatter.string(from: Date()) + ".wav"
