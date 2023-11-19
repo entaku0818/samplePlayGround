@@ -11,7 +11,7 @@ import SwiftUI
 struct samplePlayGroundApp: App {
     var body: some Scene {
         WindowGroup {
-            AudioRecorderPlayerApp()
+            MapView()
         }
     }
 }
