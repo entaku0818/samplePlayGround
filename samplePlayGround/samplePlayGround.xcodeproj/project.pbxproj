@@ -22,8 +22,13 @@
 		6180B24029BBF2DD006A5725 /* samplePlayGroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B23F29BBF2DD006A5725 /* samplePlayGroundUITests.swift */; };
 		6180B24229BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B24129BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift */; };
 		6180B25029BBF3A0006A5725 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6180B24F29BBF3A0006A5725 /* Lottie */; };
-		61C00B8E2A427C2600678AF7 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C00B8D2A427C2600678AF7 /* TextEditorView.swift */; };
 		61EBD39A2A2422C4000D7AB0 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */; };
+		61ED29212D147CCB00F9A566 /* ComplexCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED29202D147CCB00F9A566 /* ComplexCardView.swift */; };
+		61ED29232D147DEB00F9A566 /* ComplexCardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED29222D147DEB00F9A566 /* ComplexCardView1.swift */; };
+		61ED29262D147ED000F9A566 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED29252D147ED000F9A566 /* Stack.swift */; };
+		61ED29282D147FA700F9A566 /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED29272D147FA700F9A566 /* a.swift */; };
+		61ED292A2D14800D00F9A566 /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED29292D14800D00F9A566 /* aa.swift */; };
+		61ED292C2D1480AA00F9A566 /* aaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED292B2D1480AA00F9A566 /* aaa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +67,14 @@
 		6180B23B29BBF2DD006A5725 /* samplePlayGroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = samplePlayGroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6180B23F29BBF2DD006A5725 /* samplePlayGroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundUITests.swift; sourceTree = "<group>"; };
 		6180B24129BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samplePlayGroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		61C00B8D2A427C2600678AF7 /* TextEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
 		61E2D55E29BBF90900A9C712 /* ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ok.json; sourceTree = "<group>"; };
 		61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		61ED29202D147CCB00F9A566 /* ComplexCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexCardView.swift; sourceTree = "<group>"; };
+		61ED29222D147DEB00F9A566 /* ComplexCardView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexCardView1.swift; sourceTree = "<group>"; };
+		61ED29252D147ED000F9A566 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		61ED29272D147FA700F9A566 /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
+		61ED29292D14800D00F9A566 /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
+		61ED292B2D1480AA00F9A566 /* aaa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +155,6 @@
 				617FCA1C2B09898B00C0981A /* delegate */,
 				610503DE2A3FD871005214B6 /* audio */,
 				61EBD3992A2422C4000D7AB0 /* TextFieldView.swift */,
-				61C00B8D2A427C2600678AF7 /* TextEditorView.swift */,
 				610E9E2D2A039DED008A2568 /* harfmodal */,
 				020AE32229C06E3300095154 /* congratulations.json */,
 				61E2D55E29BBF90900A9C712 /* ok.json */,
@@ -155,6 +164,7 @@
 				6180B22729BBF2DD006A5725 /* Assets.xcassets */,
 				6180B22929BBF2DD006A5725 /* samplePlayGround.entitlements */,
 				6180B22A29BBF2DD006A5725 /* Preview Content */,
+				61ED29242D147DF500F9A566 /* Complex */,
 			);
 			path = samplePlayGround;
 			sourceTree = "<group>";
@@ -182,6 +192,19 @@
 				6180B24129BBF2DD006A5725 /* samplePlayGroundUITestsLaunchTests.swift */,
 			);
 			path = samplePlayGroundUITests;
+			sourceTree = "<group>";
+		};
+		61ED29242D147DF500F9A566 /* Complex */ = {
+			isa = PBXGroup;
+			children = (
+				61ED29222D147DEB00F9A566 /* ComplexCardView1.swift */,
+				61ED29202D147CCB00F9A566 /* ComplexCardView.swift */,
+				61ED29252D147ED000F9A566 /* Stack.swift */,
+				61ED29272D147FA700F9A566 /* a.swift */,
+				61ED29292D14800D00F9A566 /* aa.swift */,
+				61ED292B2D1480AA00F9A566 /* aaa.swift */,
+			);
+			path = Complex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,15 +345,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */,
-				61C00B8E2A427C2600678AF7 /* TextEditorView.swift in Sources */,
 				6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */,
 				020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */,
+				61ED29212D147CCB00F9A566 /* ComplexCardView.swift in Sources */,
+				61ED29262D147ED000F9A566 /* Stack.swift in Sources */,
 				610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */,
 				617FCA1E2B0989A900C0981A /* MapViewController.swift in Sources */,
 				6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */,
 				617FCA202B098CAA00C0981A /* LocationClient.swift in Sources */,
+				61ED29282D147FA700F9A566 /* a.swift in Sources */,
 				610503E02A3FD87C005214B6 /* AudioRecorderPlayer.swift in Sources */,
+				61ED292C2D1480AA00F9A566 /* aaa.swift in Sources */,
+				61ED29232D147DEB00F9A566 /* ComplexCardView1.swift in Sources */,
 				61EBD39A2A2422C4000D7AB0 /* TextFieldView.swift in Sources */,
+				61ED292A2D14800D00F9A566 /* aa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
