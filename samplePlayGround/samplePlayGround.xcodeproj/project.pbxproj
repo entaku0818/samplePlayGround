@@ -13,6 +13,7 @@
 		610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610503E12A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift */; };
 		610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610E9E2E2A039E00008A2568 /* HalfModal.swift */; };
 		617E070D2D56577C00287644 /* AutoScrollCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E070C2D56577C00287644 /* AutoScrollCarousel.swift */; };
+		617E070F2D56593B00287644 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E070E2D56593B00287644 /* Item.swift */; };
 		617FCA1E2B0989A900C0981A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FCA1D2B0989A900C0981A /* MapViewController.swift */; };
 		617FCA202B098CAA00C0981A /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FCA1F2B098CAA00C0981A /* LocationClient.swift */; };
 		6180B22429BBF2DC006A5725 /* samplePlayGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180B22329BBF2DC006A5725 /* samplePlayGroundApp.swift */; };
@@ -56,6 +57,7 @@
 		610503E12A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderPlayerApp.swift; sourceTree = "<group>"; };
 		610E9E2E2A039E00008A2568 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		617E070C2D56577C00287644 /* AutoScrollCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollCarousel.swift; sourceTree = "<group>"; };
+		617E070E2D56593B00287644 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		617FCA1D2B0989A900C0981A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		617FCA1F2B098CAA00C0981A /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
 		6180B22029BBF2DC006A5725 /* samplePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samplePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
+				617E070E2D56593B00287644 /* Item.swift */,
 				617E070C2D56577C00287644 /* AutoScrollCarousel.swift */,
 				617FCA1C2B09898B00C0981A /* delegate */,
 				610503DE2A3FD871005214B6 /* audio */,
@@ -349,6 +352,7 @@
 			files = (
 				610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */,
 				6180B22629BBF2DC006A5725 /* ContentView.swift in Sources */,
+				617E070F2D56593B00287644 /* Item.swift in Sources */,
 				020AE32129C06AFC00095154 /* AnimationViewController.swift in Sources */,
 				61ED29212D147CCB00F9A566 /* ComplexCardView.swift in Sources */,
 				61ED29262D147ED000F9A566 /* Stack.swift in Sources */,
