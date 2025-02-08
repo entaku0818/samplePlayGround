@@ -11,7 +11,6 @@ struct Item: Identifiable {
 struct LeftToRightScrollView: View {
     let items: [Item]
     @State private var scrollOffset: CGFloat = 0
-    @State private var dragOffset: CGFloat = 0
     @State private var isFirstAppear = true
 
     var body: some View {
@@ -19,11 +18,8 @@ struct LeftToRightScrollView: View {
             let itemWidth: CGFloat = geometry.size.width / 3.5
             let spacing: CGFloat = 10
             let singleSetWidth = CGFloat(items.count) * (itemWidth + spacing) - spacing
-
             let totalScrollWidth = (singleSetWidth * 3)
-
-            // 最後のアイテムを画面右端に合わせるための初期オフセットを計算
-            let initialOffset = -(totalScrollWidth - geometry.size.width )
+            let initialOffset = -(totalScrollWidth - geometry.size.width)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: spacing) {
@@ -33,63 +29,32 @@ struct LeftToRightScrollView: View {
                         }
                     }
                 }
-                .offset(x: scrollOffset + dragOffset)
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
-                            dragOffset = value.translation.width
-                        }
-                        .onEnded { value in
-                            let predictedOffset = scrollOffset + dragOffset
-                            dragOffset = 0
-
-                            withAnimation(.linear) {
-                                if predictedOffset > 0 {
-                                    scrollOffset = -totalScrollWidth + predictedOffset.truncatingRemainder(dividingBy: totalScrollWidth)
-                                } else if abs(predictedOffset) > totalScrollWidth {
-                                    scrollOffset = -(abs(predictedOffset).truncatingRemainder(dividingBy: totalScrollWidth))
-                                } else {
-                                    scrollOffset = predictedOffset
-                                }
-                            }
-                        }
-                )
+                .offset(x: scrollOffset)
+                .allowsHitTesting(false) // タッチ操作を無効化
             }
             .onAppear {
                 if isFirstAppear {
-                    // 最後のアイテムを画面右端に合わせた位置から開始
                     scrollOffset = initialOffset
                     isFirstAppear = false
 
-                    // デバッグ情報
-                    print("""
-                        Debug Info:
-                        - Screen Width: \(geometry.size.width)
-                        - Item Width: \(itemWidth)
-                        - Single Set Width: \(singleSetWidth)
-                        - Initial Offset: \(initialOffset)
-                        - Total Scroll Width: \(totalScrollWidth)
-                        """)
                     let totalWidth = CGFloat(items.count) * (itemWidth + spacing)
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)) {
-                            // 左から右にスクロールするために正の値に変更
                             scrollOffset = initialOffset + totalWidth
                         }
                     }
                 }
             }
+            .simultaneousGesture(DragGesture()) // スクロール操作を無効化
         }
         .frame(height: 120)
     }
 }
 
-// 右から左へのスクロールビュー
 struct RightToLeftScrollView: View {
     let items: [Item]
     @State private var scrollOffset: CGFloat = 0
-    @State private var dragOffset: CGFloat = 0
 
     var body: some View {
         GeometryReader { geometry in
@@ -104,35 +69,16 @@ struct RightToLeftScrollView: View {
                         }
                     }
                 }
-                .offset(x: scrollOffset + dragOffset)
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
-                            dragOffset = value.translation.width
-                        }
-                        .onEnded { value in
-                            let totalWidth = CGFloat(items.count) * (itemWidth + spacing)
-                            let predictedOffset = scrollOffset + dragOffset
-                            dragOffset = 0
-
-                            withAnimation(.linear) {
-                                if predictedOffset > 0 {
-                                    scrollOffset = -totalWidth + predictedOffset.truncatingRemainder(dividingBy: totalWidth)
-                                } else if abs(predictedOffset) > totalWidth {
-                                    scrollOffset = -(abs(predictedOffset).truncatingRemainder(dividingBy: totalWidth))
-                                } else {
-                                    scrollOffset = predictedOffset
-                                }
-                            }
-                        }
-                )
+                .offset(x: scrollOffset)
+                .allowsHitTesting(false)
             }
             .onAppear {
                 let totalWidth = CGFloat(items.count) * (itemWidth + spacing)
                 withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)) {
-                    scrollOffset = -totalWidth  // 右から左へ
+                    scrollOffset = -totalWidth
                 }
             }
+            .simultaneousGesture(DragGesture())
         }
         .frame(height: 120)
     }
