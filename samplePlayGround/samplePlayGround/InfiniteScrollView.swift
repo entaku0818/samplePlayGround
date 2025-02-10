@@ -30,7 +30,7 @@ struct LeftToRightScrollView: View {
                     }
                 }
                 .offset(x: scrollOffset)
-                .allowsHitTesting(false) // タッチ操作を無効化
+                .allowsHitTesting(false)
             }
             .onAppear {
                 if isFirstAppear {
@@ -46,7 +46,7 @@ struct LeftToRightScrollView: View {
                     }
                 }
             }
-            .simultaneousGesture(DragGesture()) // スクロール操作を無効化
+            .simultaneousGesture(DragGesture())
         }
         .frame(height: 120)
     }
