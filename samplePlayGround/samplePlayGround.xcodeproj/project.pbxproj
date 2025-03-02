@@ -13,6 +13,7 @@
 		610E9E2F2A039E00008A2568 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610E9E2E2A039E00008A2568 /* HalfModal.swift */; };
 		614FBE442D747C310007AD41 /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FBE432D747C310007AD41 /* MainNavigationView.swift */; };
 		614FBE472D747D5D0007AD41 /* AdaptiveLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FBE462D747D5D0007AD41 /* AdaptiveLayoutView.swift */; };
+		614FBE492D74A3070007AD41 /* MasterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FBE482D74A3070007AD41 /* MasterDetailView.swift */; };
 		617E070F2D56593B00287644 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E070E2D56593B00287644 /* InfiniteScrollView.swift */; };
 		617E07122D5701D100287644 /* LottieAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E07112D5701D100287644 /* LottieAnimationViewController.swift */; };
 		617E07132D5701D100287644 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E07102D5701D100287644 /* CarouselView.swift */; };
@@ -58,6 +59,7 @@
 		610E9E2E2A039E00008A2568 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		614FBE432D747C310007AD41 /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		614FBE462D747D5D0007AD41 /* AdaptiveLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLayoutView.swift; sourceTree = "<group>"; };
+		614FBE482D74A3070007AD41 /* MasterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailView.swift; sourceTree = "<group>"; };
 		617E070E2D56593B00287644 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		617E07102D5701D100287644 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		617E07112D5701D100287644 /* LottieAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationViewController.swift; sourceTree = "<group>"; };
@@ -126,12 +128,13 @@
 			path = harfmodal;
 			sourceTree = "<group>";
 		};
-		614FBE452D747D4A0007AD41 /* layouts */ = {
+		614FBE452D747D4A0007AD41 /* ResponsiveDesign */ = {
 			isa = PBXGroup;
 			children = (
+				614FBE482D74A3070007AD41 /* MasterDetailView.swift */,
 				614FBE462D747D5D0007AD41 /* AdaptiveLayoutView.swift */,
 			);
-			path = layouts;
+			path = ResponsiveDesign;
 			sourceTree = "<group>";
 		};
 		617FCA1C2B09898B00C0981A /* delegate */ = {
@@ -166,7 +169,7 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
-				614FBE452D747D4A0007AD41 /* layouts */,
+				614FBE452D747D4A0007AD41 /* ResponsiveDesign */,
 				614FBE432D747C310007AD41 /* MainNavigationView.swift */,
 				617E07102D5701D100287644 /* CarouselView.swift */,
 				617E07112D5701D100287644 /* LottieAnimationViewController.swift */,
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				614FBE492D74A3070007AD41 /* MasterDetailView.swift in Sources */,
 				610503E22A3FD8BF005214B6 /* AudioRecorderPlayerApp.swift in Sources */,
 				617E070F2D56593B00287644 /* InfiniteScrollView.swift in Sources */,
 				61ED29212D147CCB00F9A566 /* ComplexCardView.swift in Sources */,

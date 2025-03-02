@@ -6,7 +6,7 @@
 //
 
 
-// MainNavigationView.swift
+import SwiftUI
 import SwiftUI
 
 struct MainNavigationView: View {
@@ -16,7 +16,7 @@ struct MainNavigationView: View {
                 Section(header: Text("アニメーションとグラフィックス")) {
                     NavigationLink("カルーセルビュー", destination: CarouselHomeView())
                 }
-                
+
                 Section(header: Text("レイアウトとビュー")) {
                     NavigationLink("無限スクロール", destination: CollectionHomeView())
                     NavigationLink("ハーフモーダル", destination: HalfModalView())
@@ -26,15 +26,20 @@ struct MainNavigationView: View {
                     NavigationLink("アニメーション付きモディファイア", destination: ExcessiveModifiers1View())
                     NavigationLink("複雑なアニメーション", destination: ExcessiveModifiers2View())
                 }
-                
+
+                Section(header: Text("レスポンシブデザイン")) {
+                    NavigationLink("アダプティブレイアウト", destination: AdaptiveLayoutView())
+                    NavigationLink("マスター・ディテールパターン", destination: MasterDetailView())
+                }
+
                 Section(header: Text("ユーザー入力")) {
                     NavigationLink("テキストフィールド", destination: TextFieldView())
                 }
-                
+
                 Section(header: Text("メディア")) {
                     NavigationLink("音声録音と再生", destination: AudioRecorderPlayerApp())
                 }
-                
+
                 Section(header: Text("位置情報")) {
                     NavigationLink("位置情報サービス", destination: MapView())
                 }

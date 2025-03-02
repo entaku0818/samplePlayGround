@@ -1,3 +1,11 @@
+//
+//  MasterDetailView.swift
+//  samplePlayGround
+//
+//  Created by 遠藤拓弥 on 2025/03/02.
+//
+
+
 import SwiftUI
 
 /// マスター・ディテールパターンのサンプル
