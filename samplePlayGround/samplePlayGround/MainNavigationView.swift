@@ -14,7 +14,6 @@ struct MainNavigationView: View {
         NavigationView {
             List {
                 Section(header: Text("アニメーションとグラフィックス")) {
-                    NavigationLink("Lottieアニメーション", destination: ContentView())
                     NavigationLink("カルーセルビュー", destination: CarouselHomeView())
                 }
                 
