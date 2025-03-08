@@ -128,13 +128,13 @@
 			path = harfmodal;
 			sourceTree = "<group>";
 		};
-		614FBE452D747D4A0007AD41 /* ResponsiveDesign */ = {
+		614FBE452D747D4A0007AD41 /* adaptiveLayout */ = {
 			isa = PBXGroup;
 			children = (
 				614FBE482D74A3070007AD41 /* MasterDetailView.swift */,
 				614FBE462D747D5D0007AD41 /* AdaptiveLayoutView.swift */,
 			);
-			path = ResponsiveDesign;
+			path = adaptiveLayout;
 			sourceTree = "<group>";
 		};
 		617FCA1C2B09898B00C0981A /* delegate */ = {
@@ -169,7 +169,7 @@
 		6180B22229BBF2DC006A5725 /* samplePlayGround */ = {
 			isa = PBXGroup;
 			children = (
-				614FBE452D747D4A0007AD41 /* ResponsiveDesign */,
+				614FBE452D747D4A0007AD41 /* adaptiveLayout */,
 				614FBE432D747C310007AD41 /* MainNavigationView.swift */,
 				617E07102D5701D100287644 /* CarouselView.swift */,
 				617E07112D5701D100287644 /* LottieAnimationViewController.swift */,
